@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+    <head>
+        <title>BTR Accounts</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link rel="stylesheet" href="./index.css"/>
+
+        <script src="./accounts.js"></script>
+    </head>
+
+    <body>
+        <section>
+            <h1>Welcome to <b>B.T.R</b>,</h1>
+            <h2>A bank you can always count on!</h2>
+        </section>
+
+        <main>
+            <h3>Would you like to create an account? Just spend a few moments filling the form below:</h3>
+
+            <form class="active" onsubmit="return validateForm()">
+                <div class="info">
+                    <section>
+                        <div>
+                            <label for="name">Full Name:</label>
+                            <input id="name" type="text" name="name" placeholder="Enter name" autofocus/>
+                            <div class="error error-txt hidden">Not a valid name</div>
+                        </div>
+        
+                        <div>
+                            <label for="age">Age:</label>
+                            <input id="age" type="text" name="age" placeholder="Enter age"/>
+                            <div class="error error-txt hidden">Must be above 18 years</div>
+                        </div>
+                    </section>
+    
+                    <section>
+                        <div>
+                            <label for="password">Password:</label>
+                            <input id="password" type="password" name="password" placeholder="Enter password"/>
+                        </div>
+        
+                        <div>
+                            <label for="cpassword">Confirm password:</label>
+                            <input id="cpassword" type="password" name="password" placeholder="Confirm password"/>
+                            <div class="error error-txt hidden">Passwords not similar</div>
+                        </div>
+                    </section>
+                </div>
+
+                <button type="submit">Finish</button>
+            </form>
+        </main>
+    </body>
+</html>

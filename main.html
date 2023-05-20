@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+    <head>
+        <title>BTR Accounts</title>
+
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link rel="stylesheet" href="./index.css"/>
+
+        <script src="./operations.js"></script>
+    </head>
+
+    <body onload = "start()">
+        <nav>
+            <h3>B.T.R</h3>
+            <a href="./index.html">Sign up</a>
+        </nav>
+
+        <div>
+            <div class="acc">
+                <p class="name">Name: <span></span></p>
+                <p class="accountNum">Account Number: <span></span></p>
+                <p class="balance">Balance: <span></span></p>
+            </div>
+
+            <div class="acc">
+                <p class="name">Name: <span>Test Account</span></p>
+                <p class="accountNum">Account Number: <span></span></p>
+                <p class="balance">Balance: <span></span></p>
+            </div>
+        </div>
+
+        <main>
+            <div class="op">
+                <p onclick="toggleAction(this)" class="transfer active">Transfer</p>
+                <p onclick="toggleAction(this)" class="deposit">Deposit</p>
+                <p onclick="toggleAction(this)" class="withdraw">Withdraw</p>
+            </div>
+
+            <form class="transfer active" onsubmit="return transfer(this)">
+                <div class="info">
+                    <section>
+                        <div>
+                            <label for="amount">Amount:</label>
+                            <input id="amount" type="text" name="amount" placeholder="Enter amount" autofocus/>
+                            <div class="error error-txt hidden">Not a valid amount</div>
+                        </div>
+        
+                        <div>
+                            <label for="accNum">Recipient Account Number:</label>
+                            <input id="accNum" type="text" name="accNum" placeholder="Enter account number"/>
+                            <div class="error error-txt hidden">Not a valid account number</div>
+                        </div>
+                    </section>
+    
+                    <section>
+                        <div>
+                            <label for="bank">Recipient Bank:</label>
+                            <input id="bank" type="text" name="bank" placeholder="Enter bank"/>
+                        </div>
+        
+                        <div>
+                            <label for="password">Password:</label>
+                            <input id="password" type="password" name="password" placeholder="Password"/>
+                            <div class="error error-txt hidden">Incorrect Password</div>
+                        </div>
+                    </section>
+                </div>
+
+                <button type="submit">Transfer</button>
+            </form>
+
+            <form class="deposit" onsubmit="return deposit(this)">
+                <div class="info">
+                    <section>
+                        <div>
+                            <label>Amount:</label>
+                            <input type="text" name="amount" placeholder="Enter amount" autofocus/>
+                            <div class="error error-txt hidden">Not a valid amount</div>
+                        </div>
+                    </section>
+    
+                    <section>
+                        <div>
+                            <label>Password:</label>
+                            <input type="password" name="password" placeholder="Password"/>
+                            <div class="error error-txt hidden">Incorrect Password</div>
+                        </div>
+                    </section>
+                </div>
+
+                <button type="submit">Deposit</button>
+            </form>
+
+            <form class="withdraw" onsubmit="return withdraw(this)">
+                <div class="info">
+                    <section>
+                        <div>
+                            <label>Amount:</label>
+                            <input type="text" name="amount" placeholder="Enter amount" autofocus/>
+                            <div class="error error-txt hidden">Not a valid amount</div>
+                        </div>
+                    </section>
+    
+                    <section>
+                        <div>
+                            <label>Password:</label>
+                            <input type="password" name="password" placeholder="Password"/>
+                            <div class="error error-txt hidden">Incorrect Password</div>
+                        </div>
+                    </section>
+                </div>
+
+                <button type="submit">Withdraw</button>
+            </form>
+        </main>
+    </body>
+</html>
