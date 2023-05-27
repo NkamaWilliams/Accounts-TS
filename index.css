@@ -211,8 +211,4 @@ form button:active {
     p.name span{
         display: block;
     }
-
-    form label{
-        display: inline-block;
-    }
 }
