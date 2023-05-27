@@ -9,9 +9,17 @@ function validateForm(): false|undefined{
         return false
     }
 
+    if (validName(name.value)){
+        error[0].classList.add("hidden")
+    }
+
     if (!validAge(age.value)){
         error[1].classList.remove("hidden")
         return false
+    }
+
+    if (validAge(age.value)){
+        error[1].classList.add("hidden")
     }
 
     if (!validPassword(pass.value, confirmPass.value)){
@@ -19,9 +27,9 @@ function validateForm(): false|undefined{
         return false
     }
 
-    error[0].classList.add("hidden")
-    error[1].classList.add("hidden")
-    error[2].classList.add("hidden")
+    if (validPassword(pass.value, confirmPass.value)){
+        error[2].classList.add("hidden")
+    }
 
     localStorage.setItem("name", name.value)
     localStorage.setItem("age", age.value)
