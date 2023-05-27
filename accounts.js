@@ -14,6 +14,9 @@ function validateForm() {
         error[2].classList.remove("hidden");
         return false;
     }
+    error[0].classList.add("hidden");
+    error[1].classList.add("hidden");
+    error[2].classList.add("hidden");
     localStorage.setItem("name", name.value);
     localStorage.setItem("age", age.value);
     localStorage.setItem("password", pass.value);
