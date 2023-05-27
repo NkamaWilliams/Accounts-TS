@@ -63,7 +63,6 @@ function start() {
     document.querySelectorAll(".acc")[1].querySelectorAll('span')[0].innerHTML = "".concat(testAcc.getName());
     document.querySelectorAll(".acc")[1].querySelectorAll('span')[1].innerHTML = "".concat(testAcc.getAccountNumber());
     document.querySelectorAll(".acc")[1].querySelectorAll('span')[2].innerHTML = "".concat(testAcc.getBalance());
-    console.log("DONE");
 }
 function toggleAction(id) {
     var _a;
@@ -84,7 +83,7 @@ function transfer(id) {
     if (/^[0-9]+$/.test(amount) && /^[0-9]+$/.test(recipient)) {
         accList.forEach(function (i) {
             if (i.getAccountNumber() === recipient) {
-                myAcc.transfer(i, password, Number(amount)) ? console.log("Confirmed") : console.log("Invalid transfer");
+                myAcc.transfer(i, password, Number(amount)) ? console.log("Confirmed") : alert("Invalid transfer");
             }
         });
     }
@@ -99,7 +98,7 @@ function deposit(id) {
         console.log("Deposit confirmed");
     }
     else {
-        console.log("Invalid deposit");
+        alert("Invalid deposit");
     }
     start();
     clear();
@@ -112,7 +111,7 @@ function withdraw(id) {
         console.log("Withdraw confirmed");
     }
     else {
-        console.log("Invalid withdraw");
+        alert("Invalid withdrawal");
     }
     start();
     clear();
